@@ -16,7 +16,7 @@ public class basketballPlayers {
         this.height_in = height_in;
     }
     public String getAll(){
-        return(String.format("%s; Jersey: %d; Age: %d; Height: %d\'%d\"", this.name,this.jerseyNum,this.age,this.height_ft,this.height_in));
+        return(String.format("%s #%d;  %d-years-old;  %d\'%d\"", this.name,this.jerseyNum,this.age,this.height_ft,this.height_in));
     }
 
     public String getName() {
@@ -58,6 +58,5 @@ public class basketballPlayers {
     public void setHeight_in(int height_in) {
         this.height_in = height_in;
     }
-
 
 }

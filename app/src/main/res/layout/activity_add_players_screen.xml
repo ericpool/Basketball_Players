@@ -32,14 +32,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Age"
+            android:hint="@string/age"
             android:inputType="number" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Height:"
+            android:text="@string/height"
             android:textSize="24sp" />
 
         <LinearLayout

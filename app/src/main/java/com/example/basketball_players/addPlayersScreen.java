@@ -22,6 +22,7 @@ public class addPlayersScreen extends AppCompatActivity {
         EditText height_inET = findViewById(R.id.height_inET);
 
         basketballPlayers bp = new basketballPlayers(nameET.getText().toString(),Integer.parseInt(jerseyET.getText().toString()),Integer.parseInt(ageET.getText().toString()),Integer.parseInt(height_ftET.getText().toString()),Integer.parseInt(height_inET.getText().toString()));
-        Toast.makeText(this, bp.getAll(), Toast.LENGTH_SHORT).show();
+        Singleton.addNewPlayer(bp.getAll());
+        this.finish();
     }
 }
