@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class Singleton {
 
-    public static ArrayList<String> playerCodes = new ArrayList<>();
+    public static basketballPlayers[] bpL = new basketballPlayers[1000];
+    public static String[] playerCodes = new String[1000];
     public static int numberOfPlayers = 0;
 
-    public static void addNewPlayer(String s)
+    public static void addNewPlayer(basketballPlayers bp)
     {
-        playerCodes.add(s);
+        bpL[numberOfPlayers] = bp;
+        playerCodes[numberOfPlayers] = bp.toString();
         numberOfPlayers++;
     }
 

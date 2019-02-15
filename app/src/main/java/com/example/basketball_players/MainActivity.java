@@ -10,14 +10,28 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private CustomAdapter arrayAdapter;
+    private ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.listview_layout, Singleton.playerCodes);
-        ListView lv = findViewById(R.id.listview);
-        lv.setAdapter(arrayAdapter);
+
+        for(int i = 0; i < Singleton.bpL.length; i++)
+        {
+            Singleton.bpL[i] = new basketballPlayers("Fname",0,0,0,0);
+        }
+
+
+
+        this.arrayAdapter = new CustomAdapter(MainActivity.this, R.layout.listview_row, Singleton.bpL);
+        //Get from FireBase
+        this.lv = findViewById(R.id.listview);
+        this.lv.setAdapter(arrayAdapter);
+
+        arrayAdapter.notifyDataSetChanged();
+
     }
     public void onClickAdd(View v){
         Intent intent = new Intent(this, addPlayersScreen.class);
@@ -26,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+
         super.onResume();
+
+        arrayAdapter.notifyDataSetChanged();
+
     }
 }

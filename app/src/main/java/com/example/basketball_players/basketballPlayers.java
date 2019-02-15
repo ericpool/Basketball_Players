@@ -15,6 +15,16 @@ public class basketballPlayers {
         this.height_ft = height_ft;
         this.height_in = height_in;
     }
+    public basketballPlayers()
+    {
+        this.name = "NAME";
+        this.jerseyNum = 0;
+        this.age = 0;
+        this.height_in = 0;
+        this.height_ft = 0;
+
+    }
+
     public String getAll(){
         return(String.format("%s #%d;  %d-years-old;  %d\'%d\"", this.name,this.jerseyNum,this.age,this.height_ft,this.height_in));
     }
