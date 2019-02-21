@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "587813730788",
+    "firebase_url": "https://basketballplayers-9ef36.firebaseio.com",
+    "project_id": "basketballplayers-9ef36",
+    "storage_bucket": "basketballplayers-9ef36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587813730788:android:8e99cedf21c4fcda",
+        "android_client_info": {
+          "package_name": "com.example.basketball_players"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587813730788-uchm1339fbffkhst6a97d86k2mmt5j5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.basketball_players",
+            "certificate_hash": "b89a5ba816025916d81a46c7dd2249717908bc9b"
+          }
+        },
+        {
+          "client_id": "587813730788-jrf8duvtmqnmcj5dk91rl1fe2m33pdcb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdOS_o7esZOj4aEOdYzEtVfGqsg3cfVNg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587813730788-jrf8duvtmqnmcj5dk91rl1fe2m33pdcb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
