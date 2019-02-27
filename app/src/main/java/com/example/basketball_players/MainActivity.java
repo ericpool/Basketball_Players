@@ -7,43 +7,45 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.FirebaseApp;
+
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
     private CustomAdapter arrayAdapter;
     private ListView lv;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseApp.initializeApp(MainActivity.this);
 
         for(int i = 0; i < Singleton.bpL.length; i++)
         {
             Singleton.bpL[i] = new basketballPlayers("Fname",0,0,0,0);
         }
-
-
-
         this.arrayAdapter = new CustomAdapter(MainActivity.this, R.layout.listview_row, Singleton.bpL);
         //Get from FireBase
         this.lv = findViewById(R.id.listview);
         this.lv.setAdapter(arrayAdapter);
 
         arrayAdapter.notifyDataSetChanged();
+        Singleton.listenForDataBaseChanges();
 
     }
-    public void onClickAdd(View v){
+    public void onClickAdd(View v)
+    {
         Intent intent = new Intent(this, addPlayersScreen.class);
         startActivity(intent);
     }
 
     @Override
     protected void onResume() {
-
         super.onResume();
-
         arrayAdapter.notifyDataSetChanged();
-
     }
 }
