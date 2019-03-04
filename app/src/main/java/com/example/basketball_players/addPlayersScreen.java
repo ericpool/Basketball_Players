@@ -23,6 +23,7 @@ public class addPlayersScreen extends AppCompatActivity {
 
         basketballPlayers bp = new basketballPlayers(nameET.getText().toString(),Integer.parseInt(jerseyET.getText().toString()),Integer.parseInt(ageET.getText().toString()),Integer.parseInt(height_ftET.getText().toString()),Integer.parseInt(height_inET.getText().toString()));
         Singleton.addNewPlayer(bp);
+        Singleton.writeBpTooFirebase(bp);
         this.finish();
     }
 }

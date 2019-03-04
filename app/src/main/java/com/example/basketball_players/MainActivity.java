@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
-    private CustomAdapter arrayAdapter;
+
     private ListView lv;
 
 
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity
         {
             Singleton.bpL[i] = new basketballPlayers("Fname",0,0,0,0);
         }
-        this.arrayAdapter = new CustomAdapter(MainActivity.this, R.layout.listview_row, Singleton.bpL);
+        Singleton.aa = new CustomAdapter(MainActivity.this, R.layout.listview_row, Singleton.bpL);
         //Get from FireBase
         this.lv = findViewById(R.id.listview);
-        this.lv.setAdapter(arrayAdapter);
+        this.lv.setAdapter(Singleton.aa);
 
-        arrayAdapter.notifyDataSetChanged();
+        Singleton.aa.notifyDataSetChanged();
         Singleton.listenForDataBaseChanges();
 
     }
@@ -46,6 +46,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        arrayAdapter.notifyDataSetChanged();
+        Singleton.aa.notifyDataSetChanged();
     }
 }

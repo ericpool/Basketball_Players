@@ -13,6 +13,7 @@ public class Singleton {
     public static basketballPlayers[] bpL = new basketballPlayers[1000];
     public static String[] playerCodes = new String[1000];
     public static int numberOfPlayers = 0;
+    public static CustomAdapter aa;
 
     private static FirebaseDatabase myDb = FirebaseDatabase.getInstance();
     public static DatabaseReference myRef = myDb.getReference("basketballPlayers");
@@ -24,10 +25,14 @@ public class Singleton {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 System.out.println("**Changes were made to the Database!**");
+
+                Singleton.numberOfPlayers = 0;
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     basketballPlayers bp = ds.getValue(basketballPlayers.class);
+                    Singleton.addNewPlayer(bp);
                 }
+                Singleton.aa.notifyDataSetChanged();
             }
 
             @Override
@@ -43,7 +48,7 @@ public class Singleton {
         bpL[numberOfPlayers] = bp;
         playerCodes[numberOfPlayers] = bp.toString();
         numberOfPlayers++;
-        Singleton.writeBpTooFirebase(bp);
+
     }
     public static void writeBpTooFirebase(basketballPlayers bp)
     {
