@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity
 
         System.out.println("*** Linked List Test");
         LinkedList ll = new LinkedList();
+
         ll.addFront(7);
         ll.addFront(2);
+        ll.addEnd(4);
         ll.addFront(9);
         ll.addEnd(89);
         ll.display();

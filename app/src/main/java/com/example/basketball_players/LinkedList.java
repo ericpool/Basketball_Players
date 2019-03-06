@@ -24,7 +24,6 @@ public class LinkedList
         else
         {
             n.setNextNode(first);
-            last = first;
             first = n;
         }
         count++;
@@ -35,11 +34,13 @@ public class LinkedList
         if(this.first == null)
         {
             this.first = n;
+            this.last = n;
         }
         else
         {
-            last = last.getNextNode();
             last.setNextNode(n);
+            last = last.getNextNode();
+
         }
         count++;
     }
