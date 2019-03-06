@@ -24,6 +24,15 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(MainActivity.this);
 
+        System.out.println("*** Linked List Test");
+        LinkedList ll = new LinkedList();
+        ll.addFront(7);
+        ll.addFront(2);
+        ll.addFront(9);
+        ll.addEnd(89);
+        ll.display();
+
+
         for(int i = 0; i < Singleton.bpL.length; i++)
         {
             Singleton.bpL[i] = new basketballPlayers("Fname",0,0,0,0);
