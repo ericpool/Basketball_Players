@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity
         ll.addEnd(4);
         ll.addFront(9);
         ll.addEnd(89);
+        ll.removeAtIndex(2);
+        ll.removeFront();
+        ll.removeEnd();
         ll.display();
 
 
